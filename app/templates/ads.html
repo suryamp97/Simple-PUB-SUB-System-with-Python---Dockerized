@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  form,p{
+text-align: center;
+  }
+ 
+</style>
+</head>
+<body>
+
+<img src="/static/twitter.jpeg" width="300" height="168.75">
+
+<form action="{{ url_for("mail_success")}}" method="post">
+
+
+
+  <label for="subscribe">Select a topic to Advertise/De-Advertise:</label>
+  <select name="subscribe" id="subscribe">
+    <option value="Rainbow6Game">Rainbow6Game</option>
+    <option value="FarCrygame">FarCrygame</option>
+    <option value="assassinscreed">assassinscreed</option>
+  </select>
+    <br><br>
+  <label for="addead">Advertise/De-Advertise</label>
+  <select name="addead" id="addead">
+    <option value="ad">Advertise</option>
+    <option value="deadd">De-Advertise</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Send notifications">
+
+</form>
+
+<form action="{{ url_for("index")}}" >
+  <input type="submit" value="Go Home">
+</form>
+  <!--
+  <div style="margin: auto;
+  width: 15%;
+  border: 3px solid #73AD21;">
+    <p >Previous 10 searches</p>
+    <ul>
+    {% for item in data %}
+    <li>{{item.keyw}}</li>
+
+{% endfor %}
+  </ul></div> 
+-->
+</body>
+</html>

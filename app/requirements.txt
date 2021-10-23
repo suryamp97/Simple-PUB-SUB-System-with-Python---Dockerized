@@ -1,0 +1,4 @@
+Flask
+mysql-connector
+tweepy
+flask_mail
