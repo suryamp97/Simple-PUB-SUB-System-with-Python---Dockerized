@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  form,p{
+text-align: center;
+  }
+ 
+</style>
+</head>
+<body>
+
+<img src="/static/twitter.jpeg" width="300" height="168.75">
+
+<form action="{{ url_for("subscriptions")}}" method="post">
+
+
+  
+  <input type="text" id="name" name="name" value="Enter your name..."><br>
+
+  <input type="text" id="email" name="email" value="Enter you email..."><br>
+
+  <label for="subscribe">Select a topic to subscribe:</label>
+  <select name="subscribe" id="subscribe">
+    <option value="Rainbow6Game">Rainbow6Game</option>
+    <option value="FarCrygame">FarCrygame</option>
+    <option value="assassinscreed">assassinscreed</option>
+  </select>
+    <br><br>
+  <label for="subunsub">Subscribe/UnSubscribe</label>
+  <select name="subunsub" id="subunsub">
+    <option value="Subscribe">Subscribe</option>
+    <option value="UnSubscribe">UnSubscribe</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+
+</form>
+
+<form action="{{ url_for("index")}}" >
+  <input type="submit" value="Go Home">
+</form>
+  <!--
+  <div style="margin: auto;
+  width: 15%;
+  border: 3px solid #73AD21;">
+    <p >Previous 10 searches</p>
+    <ul>
+    {% for item in data %}
+    <li>{{item.keyw}}</li>
+
+{% endfor %}
+  </ul></div> 
+-->
+</body>
+</html>

@@ -1,11 +1,45 @@
 version: "2"
 services:
-  app:
-    build: ./app
+  publisher:
+    container_name: publisher
+    build: ./publisher
     links:
       - db
     ports:
       - "5000:5000"
+
+    
+  subscriber:
+    container_name: subscriber
+    build: ./subscriber
+    links:
+      - db
+    ports:
+      - "5050:5050"
+
+  broker1:
+    container_name: broker1
+    build: ./broker1
+    links:
+      - db
+    ports:
+      - "6001:6001"
+
+  broker2:
+    container_name: broker2
+    build: ./broker2
+    links:
+      - db
+    ports:
+      - "6002:6002"
+
+  broker3:
+    container_name: broker3
+    build: ./broker3
+    links:
+      - db
+    ports:
+      - "6003:6003"
 
   db:
     image: mysql:5.7

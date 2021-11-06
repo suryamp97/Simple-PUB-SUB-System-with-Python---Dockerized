@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  form,p{
+text-align: center;
+  }
+ 
+</style>
+</head>
+<body>
+
+<img src="/static/twitter.jpeg" width="300" height="168.75">
+  <div style="margin: auto;
+  width: 15%;
+  border: 3px solid #73AD21;">
+    <p >Published tweet</p>
+    <ul>
+    {% for item in data %}
+    <li>{{item}}</li>
+
+    {% endfor %}
+  </ul></div> 
+<form action="{{ url_for("publish")}}" method="post">
+  <input type="submit" value="Go Back">
+</form>
+
+
+  <!--
+  <div style="margin: auto;
+  width: 15%;
+  border: 3px solid #73AD21;">
+    <p >Previous 10 searches</p>
+    <ul>
+    {% for item in data %}
+    <li>{{item.keyw}}</li>
+
+{% endfor %}
+  </ul></div> 
+-->
+</body>
+</html>
